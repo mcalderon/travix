@@ -1,7 +1,5 @@
-package com.travix.medusa.busyflights.domain.busyflights;
+package com.travix.medusa.busyflights.domain.supplier.crazyair;
 
-import javax.validation.constraints.Max;
-import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
@@ -14,7 +12,7 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class BusyFlightsRequest {
+public class CrazyAirRequest {
 
     @NotNull(message = "Origin parameter is missing")
     @Size(min = 3, max = 3, message = "Origin must be a 3 letter IATA code")
@@ -29,7 +27,6 @@ public class BusyFlightsRequest {
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private String returnDate;
     @NotNull(message = "Number of passengers is missing")
-    @Min(value = 1)
-    @Max(value = 4)
-    private String numberOfPassengers;
+    private String passengerCount;
+
 }
